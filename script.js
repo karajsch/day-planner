@@ -1,8 +1,12 @@
 let now = moment();
 
-var currentDay = document.getElementById("currentDay");
+//var currentDay = document.getElementById("currentDay");
 
-currentDay.innerHTML = now.format("dddd, MMMM Do YYYY");
+//currentDay.innerHTML = now.format("dddd, MMMM Do YYYY");
+
+$(document).ready(function () {
+  $("#currentDay").text(moment().format("dddd, MMMM Do, YYYY"));
+});
 
 $(document).ready(function () {
   clockUpdate();
@@ -35,4 +39,9 @@ function clockUpdate() {
   var s = addZero(date.getSeconds());
 
   $(".digital-clock").text("It's " + h + ":" + m + ":" + s + " on ");
+}
+
+function setItem() {
+  var userContent = document.getElementById("userNotes").nodeValue;
+  localStorage.setItem("userContent", userContent);
 }

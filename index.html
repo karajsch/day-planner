@@ -9,29 +9,43 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
     <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
     <title>Work Day Scheduler</title>
   </head>
-
+  <script src="https://use.fontawesome.com/bec0d899fe.js"></script>
   <body>
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p class="smiley"><i class="fa fa-smile-o" aria-hidden="true"></i></p>
       <div class="digital-clock"></div>
       <p id="currentDay"></p>
     </header>
 
     <div class="container">
-      <!-- Timeblocks go here -->
+      
+      <section class="row" id="9">
+
+        <section class="hour col-2"> 9 am
+        </section>
+        <section class="col-8 form-group">
+
+          <textarea class="form-control bg-transparent border-0" id="textArea9" name="text9am" placeholder="add note here" rows="1" id="userNotes">
+          </textarea>
+
+        </section>
+  
+        <div class="col-2 saveBtn">
+          <button onclick='setItem(this)' data-num="9" type="submit" class="btn btn-primary mb-2">
+            <i class="fa fa-floppy-o" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+  
+      
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
