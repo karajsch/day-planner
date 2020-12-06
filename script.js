@@ -41,7 +41,7 @@ function clockUpdate() {
   $(".digital-clock").text("It's " + h + ":" + m + ":" + s + " on ");
 }
 
-function setItem() {
-  var userContent = document.getElementById("userNotes").nodeValue;
-  localStorage.setItem("userContent", userContent);
+function mySave() {
+  var myContent = document.getElementById("myTextarea").value;
+  localStorage.setItem("myContent", myContent);
 }
