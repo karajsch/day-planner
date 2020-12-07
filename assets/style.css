@@ -16,7 +16,7 @@ textarea {
 .jumbotron {
   text-align: center;
   background-image: radial-gradient(circle, rgba(255, 255, 229, 0.9), rgb(255, 168, 216, .5), rgb(255, 164, 103, .4)),
-    url(https://karajsch.github.io/day-planner/imgs/pipes.png);
+    url(/imgs/pipes.png);
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
