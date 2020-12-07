@@ -15,7 +15,8 @@ textarea {
 
 .jumbotron {
   text-align: center;
-  background-color: transparent;
+  background-image: radial-gradient(circle, rgba(255, 255, 229, 0.9), rgb(255, 168, 216, .5), rgb(255, 164, 103, .4)),
+    url(/imgs/pipes.png);
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
@@ -23,11 +24,12 @@ textarea {
 
 #currentDay {
   font-size: 24px;
-  background: #333;
-  color: white;
+  color: black;
+  background: rgba(255, 255, 229, 0.5);
   display: table;
   margin: 0px auto 0px auto;
-  padding: 20px
+  padding: 20px;
+  border: 1px black dashed;
 }
 
 .description {
