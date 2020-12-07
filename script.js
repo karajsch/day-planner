@@ -1,6 +1,7 @@
 $(document).ready(function () {
+  //wrapping everything in the document ready function
 
-  //Setting up the date and appending to the HTML page
+  // Using Moment.js for time and date
   var today = moment().format("[It's ] hh:mm A [ on ] dddd, MMMM Do, YYYY");
   console.log(today)
 
@@ -8,7 +9,7 @@ $(document).ready(function () {
 
   var now = parseInt(moment().format('HH'));
   console.log(now)
-
+  // Making each hour it's own variable
   var $text9AM = $("#text9AM");
   var $text10AM = $("#text10AM");
   var $text11AM = $("#text11AM");
@@ -19,7 +20,7 @@ $(document).ready(function () {
   var $text4PM = $("#text4PM");
   var $text5PM = $("#text5PM");
 
-
+  // Color coding based on time of day and if it's past, present, or future
   $("textarea").each(function () {
     var name = parseInt($(this).attr("name"));
     if (name < now) {
@@ -38,9 +39,8 @@ $(document).ready(function () {
 
   })
 
+  // Grabbing user submitted text and setting it to local storage
   $("button").on("click", function () {
-
-    //setting items in the local storage
     localStorage.setItem("9AM", ($text9AM.val()))
     localStorage.setItem("10AM", ($text10AM.val()))
     localStorage.setItem("11AM", ($text11AM.val()))
@@ -53,7 +53,7 @@ $(document).ready(function () {
 
   })
 
-  //getting the content stored and sending to the screen. When page is refreshed content will stay
+  // Getting user text from local storage and appending it to user's computer 
   $("#text9AM").append(localStorage.getItem("9AM"));
   $("#text10AM").append(localStorage.getItem("10AM"));
   $("#text11AM").append(localStorage.getItem("11AM"));
