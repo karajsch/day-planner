@@ -28,11 +28,11 @@ $(document).ready(function () {
     }
 
     if (name > now) {
-      $(this).addClass("present")
+      $(this).addClass("future")
     }
 
     if (name === now) {
-      $(this).addClass("future")
+      $(this).addClass("present")
     }
 
 
