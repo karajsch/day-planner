@@ -1,55 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Work Day Scheduler</title>
-  </head>
-  <script src="https://use.fontawesome.com/bec0d899fe.js"></script>
-  <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p class="smiley"><i class="fa fa-smile-o" aria-hidden="true"></i></p>
-      <div class="digital-clock"></div>
-      <p id="currentDay"></p>
-    </header>
 
-    <div class="container">
-      
-      <section class="row" id="9">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Work Day Scheduler</title>
+</head>
+<script src="https://use.fontawesome.com/bec0d899fe.js"></script>
 
-        <section class="hour col-2"> 9 am
-        </section>
-        <section class="col-8 form-group">
+<body>
+  <header class="jumbotron">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p class="smiley"><i class="fa fa-smile-o" aria-hidden="true"></i></p>
+    <p id="currentTime"></p>
+    <p id="currentDay"></p>
+  </header>
 
-          <textarea class="form-control bg-transparent border-0" id="textArea9" name="text9am" placeholder="add note here" rows="1" id="myTextArea">
-          </textarea>
+  <section class="container text-right scheduler">
 
-        </section>
-  
-        <div class="col-2 saveBtn">
-          <button onclick="mySave()" data-num="9" type="submit" class="btn btn-primary mb-2">
-            Save
-          </button>
-        </div>
-      </div>
-  
-      
-    </div>
+    <!--9am start-->
+    <section class="row row9">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+      <section class="input-container input-group col-1 hour">9 am
+      </section>
+
+      <section class="input-group col-10 form-group time-block">
+
+        <textarea id="text9AM" class="form-control description" rows="1" style="resize:none" name="9"></textarea>
+
+        <button class="col-1 btn saveBtn"><i class="fa fa-bookmark-o" aria-hidden="true"
+            alt="Save This Note For 9 am"></i></button>
+
+      </section>
+    </section>
+    <!--9am end-->
+
+    <!--10am start-->
+    <section class="row row10">
+
+      <section class="input-container input-group col-1 hour">10 am
+      </section>
+
+      <section class="input-group col-10 form-group time-block">
+
+        <textarea id="text10AM" class="form-control description" rows="1" style="resize:none" name="10"></textarea>
+
+        <button class="col-1 btn saveBtn"><i class="fa fa-bookmark-o" aria-hidden="true"
+            alt="Save This Note for 10am"></i></button>
+
+      </section>
+    </section>
+    <!--10am end-->
+
+
+
+    <!--11am start-->
+    <section class="row row11">
+
+      <section class="input-container input-group col-1 hour">11 am
+      </section>
+
+      <section class="input-group col-10 form-group time-block">
+
+        <textarea id="text11AM" class="form-control description" rows="1" style="resize:none" name="11"></textarea>
+
+        <button class="col-1 btn saveBtn"><i class="fa fa-bookmark-o" aria-hidden="true"
+            alt="Save This Note for 11am"></i></button>
+
+      </section>
+    </section>
+    <!--11am end-->
+
+    <!--12pm start-->
+    <section class="row row12">
+
+      <section class="input-container input-group col-1 hour">12 pm
+      </section>
+
+      <section class="input-group col-10 form-group time-block">
+
+        <textarea id="text12PM" class="form-control description" rows="1" style="resize:none" name="12"></textarea>
+
+        <button class="col-1 btn saveBtn"><i class="fa fa-bookmark-o" aria-hidden="true"
+            alt="Save This Note for 12pm"></i></button>
+
+      </section>
+    </section>
+    <!--12pm end-->
+
+    <!--1pm start-->
+    <section class="row row13">
+
+      <section class="input-container input-group col-1 hour">1 pm
+      </section>
+
+      <section class="input-group col-10 form-group time-block">
+
+        <textarea id="text1PM" class="form-control description" rows="1" style="resize:none" name="13"></textarea>
+
+        <button class="col-1 btn saveBtn"><i class="fa fa-bookmark-o" aria-hidden="true"
+            alt="Save This Note for 1pm"></i></button>
+
+      </section>
+    </section>
+    <!--1pm end-->
+
+    <!--2pm start-->
+    <section class="row row14">
+
+      <section class="input-container input-group col-1 hour">2 pm
+      </section>
+
+      <section class="input-group col-10 form-group time-block">
+
+        <textarea id="text2PM" class="form-control description" rows="1" style="resize:none" name="14"></textarea>
+
+        <button class="col-1 btn saveBtn"><i class="fa fa-bookmark-o" aria-hidden="true"
+            alt="Save This Note for 2pm"></i></button>
+
+      </section>
+    </section>
+    <!--2pm end-->
+
+    <!--3pm start-->
+    <section class="row row15">
+
+      <section class="input-container input-group col-1 hour">3 pm
+      </section>
+
+      <section class="input-group col-10 form-group time-block">
+
+        <textarea id="text3PM" class="form-control description" rows="1" style="resize:none" name="15"></textarea>
+
+        <button class="col-1 btn saveBtn"><i class="fa fa-bookmark-o" aria-hidden="true"
+            alt="Save This Note for 3pm"></i></button>
+
+      </section>
+    </section>
+    <!--3pm end-->
+
+    <!--4pm start-->
+    <section class="row row16">
+
+      <section class="input-container input-group col-1 hour">4 pm
+      </section>
+
+      <section class="input-group col-10 form-group time-block">
+
+        <textarea id="text4PM" class="form-control description" rows="1" style="resize:none" name="16"></textarea>
+
+        <button class="col-1 btn saveBtn"><i class="fa fa-bookmark-o" aria-hidden="true"
+            alt="Save This Note for 4pm"></i></button>
+
+      </section>
+    </section>
+    <!--4pm end-->
+
+    <!--5pm start-->
+    <section class="row row17">
+
+      <section class="input-container input-group col-1 hour">5 pm
+      </section>
+
+      <section class="input-group col-10 form-group time-block">
+
+        <textarea id="text5PM" class="form-control description" rows="1" style="resize:none" name="17"></textarea>
+
+        <button class="col-1 btn saveBtn"><i class="fa fa-bookmark-o" aria-hidden="true"
+            alt="Save This Note for 5pm"></i></button>
+
+      </section>
+    </section>
+    <!--5pm end-->
+
+  </section>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>

@@ -1,47 +1,67 @@
-let now = moment();
-
-//var currentDay = document.getElementById("currentDay");
-
-//currentDay.innerHTML = now.format("dddd, MMMM Do YYYY");
-
 $(document).ready(function () {
-  $("#currentDay").text(moment().format("dddd, MMMM Do, YYYY"));
-});
 
-$(document).ready(function () {
-  clockUpdate();
-  setInterval(clockUpdate, 1000);
-});
+  //Setting up the date and appending to the HTML page
+  var today = moment().format("[It's ] hh:mm A [ on ] dddd, MMMM Do, YYYY");
+  console.log(today)
 
-function clockUpdate() {
-  var date = new Date();
-  $(".digital-clock").css({ color: "#000" });
-  function addZero(x) {
-    if (x < 10) {
-      return (x = "0" + x);
-    } else {
-      return x;
+  $("#currentDay").append(today);
+
+  var now = parseInt(moment().format('HH'));
+  console.log(now)
+
+  var $text9AM = $("#text9AM");
+  var $text10AM = $("#text10AM");
+  var $text11AM = $("#text11AM");
+  var $text12AM = $("#text12PM");
+  var $text1PM = $("#text1PM");
+  var $text2PM = $("#text2PM");
+  var $text3PM = $("#text3PM");
+  var $text4PM = $("#text4PM");
+  var $text5PM = $("#text5PM");
+
+
+  $("textarea").each(function () {
+    var name = parseInt($(this).attr("name"));
+    if (name < now) {
+      $(this).addClass("past");
     }
-  }
 
-  function twelveHour(x) {
-    if (x > 12) {
-      return (x = x - 12);
-    } else if (x == 0) {
-      return (x = 12);
-    } else {
-      return x;
+    if (name > now) {
+      $(this).addClass("present")
     }
-  }
 
-  var h = addZero(twelveHour(date.getHours()));
-  var m = addZero(date.getMinutes());
-  var s = addZero(date.getSeconds());
+    if (name === now) {
+      $(this).addClass("future")
+    }
 
-  $(".digital-clock").text("It's " + h + ":" + m + ":" + s + " on ");
-}
 
-function mySave() {
-  var myContent = document.getElementById("myTextarea").value;
-  localStorage.setItem("myContent", myContent);
-}
+
+  })
+
+  $("button").on("click", function () {
+
+    //setting items in the local storage
+    localStorage.setItem("9AM", ($text9AM.val()))
+    localStorage.setItem("10AM", ($text10AM.val()))
+    localStorage.setItem("11AM", ($text11AM.val()))
+    localStorage.setItem("12AM", ($text12AM.val()))
+    localStorage.setItem("13PM", ($text1PM.val()))
+    localStorage.setItem("14PM", ($text2PM.val()))
+    localStorage.setItem("15PM", ($text3PM.val()))
+    localStorage.setItem("16PM", ($text4PM.val()))
+    localStorage.setItem("17PM", ($text5PM.val()))
+
+  })
+
+  //getting the content stored and sending to the screen. When page is refreshed content will stay
+  $("#text9AM").append(localStorage.getItem("9AM"));
+  $("#text10AM").append(localStorage.getItem("10AM"));
+  $("#text11AM").append(localStorage.getItem("11AM"));
+  $("#text12AM").append(localStorage.getItem("12AM"));
+  $("#text1PM").append(localStorage.getItem("13PM"));
+  $("#text2PM").append(localStorage.getItem("14PM"));
+  $("#text3PM").append(localStorage.getItem("15PM"));
+  $("#text4PM").append(localStorage.getItem("16PM"));
+  $("#text5PM").append(localStorage.getItem("17PM"));
+
+})
