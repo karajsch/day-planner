@@ -23,6 +23,11 @@ textarea {
 
 #currentDay {
   font-size: 24px;
+  background: #333;
+  color: white;
+  display: table;
+  margin: 0px auto 0px auto;
+  padding: 20px
 }
 
 .description {
@@ -75,5 +80,5 @@ textarea {
 }
 
 .smiley {
-  font-size: 30px;
+  font-size: 40px;
 }
