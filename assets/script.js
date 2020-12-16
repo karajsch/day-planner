@@ -2,10 +2,11 @@ $(document).ready(function () {
   //wrapping everything in the document ready function
 
   // Using Moment.js for time and date
-  var today = moment().format("[It's ] hh:mm A [ on ] dddd, MMMM Do, YYYY");
+  var today = moment().format("[Hi. It's ] hh:mm A [ on ] dddd, MMMM Do, YYYY");
   console.log(today)
 
   $("#currentDay").append(today);
+
 
   var now = parseInt(moment().format('HH'));
   console.log(now)
